@@ -1,0 +1,43 @@
+# Build output
+bin/
+obj/
+
+# Publish output (binary is checked in at .gitseal/charseal)
+publish/
+
+# NuGet
+*.nupkg
+*.snupkg
+.nuget/
+packages/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider / VS
+.vs/
+*.DotSettings.user
+.idea/
+
+# Test results
+TestResults/
+coverage/
+*.trx
+*.coverage
+*.coveragexml
+
+# dotnet tools
+.config/dotnet-tools.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Misc
+superpowers/
+.gitseal/seal.env
+.gitseal/charseal.pdb
+.clause-session-id

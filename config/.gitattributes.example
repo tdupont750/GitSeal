@@ -1,0 +1,42 @@
+# Encrypt all binary files from the root — OpenSSL AES-256-CBC
+** filter=seal-bin diff=seal-bin -text
+
+# Encrypt all known text extensions — CharSeal (overrides the binary rule above)
+*.txt  filter=seal-txt diff=seal-txt merge=seal-txt text
+*.md   filter=seal-txt diff=seal-txt merge=seal-txt text
+*.json filter=seal-txt diff=seal-txt merge=seal-txt text
+*.xml  filter=seal-txt diff=seal-txt merge=seal-txt text
+*.yaml filter=seal-txt diff=seal-txt merge=seal-txt text
+*.yml  filter=seal-txt diff=seal-txt merge=seal-txt text
+*.csv  filter=seal-txt diff=seal-txt merge=seal-txt text
+*.html filter=seal-txt diff=seal-txt merge=seal-txt text
+*.htm  filter=seal-txt diff=seal-txt merge=seal-txt text
+*.css  filter=seal-txt diff=seal-txt merge=seal-txt text
+*.js   filter=seal-txt diff=seal-txt merge=seal-txt text
+*.ts   filter=seal-txt diff=seal-txt merge=seal-txt text
+*.cs   filter=seal-txt diff=seal-txt merge=seal-txt text
+*.sh   filter=seal-txt diff=seal-txt merge=seal-txt text
+
+# ── Git & GitHub plaintext exclusions ────────────────────────────────────────
+
+# Core Git metadata
+.gitattributes         filter diff text
+.gitignore             filter diff text
+.gitmodules            filter diff text
+.gitconfig             filter diff text
+.git-blame-ignore-revs filter diff text
+.mailmap               filter diff text
+COMMIT_EDITMSG         filter diff text
+MERGE_MSG              filter diff text
+
+# Common root-level project files
+README*                filter diff text
+LICENSE*               filter diff text
+CHANGELOG*             filter diff text
+CONTRIBUTING*          filter diff text
+AUTHORS*               filter diff text
+NOTICE*                filter diff text
+CODEOWNERS             filter diff text
+
+# GitHub-specific files and folders
+.github/**             filter diff text

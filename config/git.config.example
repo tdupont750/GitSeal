@@ -1,0 +1,19 @@
+[filter "seal-txt"]
+	required = true
+	clean = "bash ./.gitseal/clean-txt.sh"
+	smudge = "bash ./.gitseal/smudge-txt.sh"
+
+[diff "seal-txt"]
+	textconv = "bash ./.gitseal/textconv-txt.sh"
+
+[filter "seal-bin"]
+	required = true
+	clean = "bash ./.gitseal/clean-bin.sh"
+	smudge = "bash ./.gitseal/smudge-bin.sh"
+
+[diff "seal-bin"]
+	textconv = "bash ./.gitseal/textconv-bin.sh"
+
+[merge "seal-txt"]
+	name = CharSeal text merge
+	driver = bash ./.gitseal/merge-txt.sh %O %A %B

@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="CharSeal.Tests/CharSeal.Tests.csproj" />
+  <Project Path="CharSeal.Console/CharSeal.Console.csproj" />
+</Solution>
