@@ -4,7 +4,7 @@ source "$(dirname "$0")/_lib.sh"
 
 # Git calls this driver as: merge-txt.sh %O %A %B
 # $1 = %O = base (ancestor), $2 = %A = ours and output path, $3 = %B = theirs.
-# All three are encrypted blobs from the object store (have Seal_t__ marker).
+# All three are encrypted blobs from the object store (have Crypt_t_ marker).
 # Decrypt all three, run git merge-file on the plaintext, then write back to %A:
 # • Clean merge: write ENCRYPTED output — git's 'ort' strategy does not re-run
 #   the clean filter on merge driver output, so the driver must encrypt itself.

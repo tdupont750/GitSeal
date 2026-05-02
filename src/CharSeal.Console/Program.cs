@@ -3,7 +3,7 @@
 //
 // Usage: CharSeal <encrypt|decrypt> <seed> <filepath> [skip]
 //   skip  — number of leading bytes to strip before processing (used by the git smudge
-//            filter to remove the 8-byte "Seal_t__" blob marker before decrypting).
+//            filter to remove the 8-byte "Crypt_t_" blob marker before decrypting).
 using CharSeal;
 
 if (args.Length is < 3 or > 4)
@@ -32,7 +32,7 @@ if (!File.Exists(path))
 try
 {
     var engine = new CipherEngine(seed);
-    // skip strips the leading blob marker bytes (e.g. the 8-byte "Seal_t__" prefix).
+    // skip strips the leading blob marker bytes (e.g. the 8-byte "Crypt_t_" prefix).
     char[] content = File.ReadAllText(path).ToCharArray()[skip..];
     if (mode == "encrypt") engine.Encrypt(content); else engine.Decrypt(content);
     Console.Write(new string(content));

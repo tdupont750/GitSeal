@@ -21,9 +21,9 @@ readonly CHARSEAL='./.gitseal/charseal'
 # recovery if the passphrase is unavailable.
 # ---
 # Text (CharSeal) blobs — exactly 8 bytes.
-readonly SEAL_MARK_TXT='Seal_t__'
+readonly SEAL_MARK_TXT='Crypt_t_'
 # Binary (OpenSSL) blobs — exactly 8 bytes.
-readonly SEAL_MARK_BIN='Seal____'
+readonly SEAL_MARK_BIN='Crypt___'
 
 # Returns true (exit 0) if the first 8 bytes of the given file match the given
 # marker exactly. Usage: has_seal_mark <file> <mark>

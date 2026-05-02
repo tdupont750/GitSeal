@@ -56,8 +56,8 @@ Each filter prefixes every encrypted blob with an 8-byte marker so the smudge fi
 
 | Filter     | Marker     | Cipher                                                     | Used for              |
 | ---------- | ---------- | ---------------------------------------------------------- | --------------------- |
-| `seal-txt` | `Seal_t__` | CharSeal — seeded Caesar over 95-char printable ASCII ring | Known text extensions |
-| `seal-bin` | `Seal____` | OpenSSL AES-256-CBC (PBKDF2, no salt)                      | Everything else       |
+| `seal-txt` | `Crypt_t_` | CharSeal — seeded Caesar over 95-char printable ASCII ring | Known text extensions |
+| `seal-bin` | `Crypt___` | OpenSSL AES-256-CBC (PBKDF2, no salt)                      | Everything else       |
 
 ### Merge driver
 
